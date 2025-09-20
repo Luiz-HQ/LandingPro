@@ -5,14 +5,23 @@ import {
   Code,
   DollarSign,
   Globe,
+  Mail,
   MessageCircle,
   Palette,
   Smartphone,
+  Star,
   TrendingUp,
   Zap,
 } from "lucide-react";
 
 export default function Home() {
+  const whatsappNumber = "5513982264495";
+  const whatsappMessage =
+    "Olá! Vi sua página e gostaria de um orçamento para uma landing page.";
+  const whatsappLink = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(
+    whatsappMessage
+  )}`;
+
   const features = [
     {
       icon: <Zap className="h-8 w-8 text-blue-600" />,
@@ -94,7 +103,7 @@ export default function Home() {
               Benefícios
             </a>
             <a
-              href="#depoiments"
+              href="#testimonials"
               className="text-gray-600 hover:text-blue-600 transition-colors"
             >
               Depoimentos
@@ -107,10 +116,14 @@ export default function Home() {
             </a>
           </nav>
 
-          <button className="bg-[#171717] hover:bg-[#222222] px-4 py-2 rounded-md text-[#FDFEFF] font-bold cursor-pointer text-[14px] hidden md:flex items-center gap-2">
+          <a
+            href={whatsappLink}
+            target="_blank"
+            className="bg-[#171717] hover:bg-[#303030] px-4 py-2 rounded-md text-[#FDFEFF] font-bold cursor-pointer text-[14px] hidden md:flex items-center gap-2"
+          >
             <MessageCircle className="w-4" />
             Falar Agora
-          </button>
+          </a>
         </div>
       </header>
 
@@ -134,11 +147,15 @@ export default function Home() {
           </p>
 
           <div className="flex items-center justify-center gap-2">
-            <button className="bg-[#155DFC] hover:bg-[#003ab8] flex items-center justify-center gap-2 cursor-pointer rounded-md text-[#FDFEFF] p-3">
+            <a
+              href={whatsappLink}
+              target="_blank"
+              className="bg-[#155DFC] hover:bg-[#003ab8] flex items-center justify-center gap-2 cursor-pointer rounded-md text-[#FDFEFF] p-3"
+            >
               <Zap className="h-5 w-5 mr-2" />
               Quero um Orçamento GRÁTIS!
               <ArrowRight className="h-5 w-5 ml-2" />
-            </button>
+            </a>
           </div>
 
           <div className="mt-12 flex flex-wrap justify-center items-center gap-8 text-sm text-gray-500">
@@ -192,7 +209,7 @@ export default function Home() {
         id="benefits"
         className="py-20 px-4 bg-gradient-to-r from-blue-50 to-purple-50"
       >
-        <div className="container mx-auto">
+        <div className="container mx-auto text-center">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="flex flex-col">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
@@ -241,6 +258,130 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <section id="testimonials" className="py-20 px-4 bg-white">
+        <div className="container mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            O que nossos clientes dizem
+          </h2>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-16">
+            Mais de 100 empresários já transformaram seus negócios com nossas
+            landing pages.
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-start rounded-lg border border-gray-200 p-6 shadow-md hover:shadow-xl transition-shadow duration-300"
+              >
+                <div className="flex items-center space-x-1 mb-2">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <Star
+                      key={i}
+                      className="h-4 w-4 fill-yellow-400 text-yellow-400"
+                    />
+                  ))}
+                </div>
+
+                <h3 className="text-lg font-semibold text-gray-900 mb-1">
+                  {testimonial.name}
+                </h3>
+                <h4 className="text-gray-600 text-sm mb-8">
+                  {testimonial.business}
+                </h4>
+
+                <p className="text-gray-600 italic text-left">
+                  &quot;{testimonial.text}&quot;
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="contact"
+        className="py-20 px-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white"
+      >
+        <div className="cointainer mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Pronto para aumentar suas vendas?
+          </h2>
+          <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
+            Entre em contato agora e receba sua landing page profissional em até
+            48 horas. Orçamento sem compromisso!
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a
+              href={whatsappLink}
+              target="_blank"
+              className="flex items-center justify-center bg-[#48BC5D] text-white hover:bg-gray-100 hover:text-[#20974d] transition-colors duration-400 cursor-pointer rounded-md px-4 py-2 text-lg"
+            >
+              <MessageCircle className="h-5 w-5 mr-2" />
+              WhatsApp: (13) 98226-4495
+            </a>
+            <a
+              href="mailto:luizhn1703@gmail.com"
+              target="blank"
+              className="flex items-center justify-center bg-white text-blue-600 hover:bg-blue-300 hover:text-white transition-colors duration-400 cursor-pointer rounded-md px-4 py-2 text-lg"
+            >
+              <Mail className="h-5 w-5 mr-2" />
+              Enviar E-mail
+            </a>
+          </div>
+
+          <p className="mt-6 text-sm opacity-75">
+            Resposta em até 2 horas • Orçamento gratuito • Sem compromisso
+          </p>
+        </div>
+      </section>
+
+      <footer className="bg-gray-900 text-white py-12 px-4">
+        <div className="container mx-auto">
+          <div className="grid md:grid-cols-4 gap-8">
+            <div>
+              <div className="flex items-center space-x-2 mb-4">
+                <Globe className="h-6 w-6 text-blue-400" />
+                <span className="text-lg font-bold">LandingPro</span>
+              </div>
+              <p className="text-gray-400 text-sm">
+                Criamos landing pages profissionais que convertem visitantes em
+                clientes. Entrega rápida e preço justo.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-4">Serviços</h3>
+              <ul className="space-y-2 text-sm text-gray-400">
+                <li>Landing Pages</li>
+                <li>Sites Institucionais</li>
+                <li>E-commerce</li>
+                <li>Manutenção</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-4">Suporte</h3>
+              <ul className="space-y-2 text-sm text-gray-400">
+                <li>FAQ</li>
+                <li>Documentação</li>
+                <li>Contato</li>
+                <li>Garantia</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-4">Contato</h3>
+              <ul className="space-y-2 text-sm text-gray-400">
+                <li>WhatsApp: (13) 98226-4495</li>
+                <li>Email: luizhn1703@gmail.com</li>
+                <li>Horário: 9h às 16h</li>
+              </ul>
+            </div>
+          </div>
+          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
+            <p>&copy; 2024 LandingPro. Todos os direitos reservados.</p>
+          </div>
+        </div>
+      </footer>
     </main>
   );
 }
