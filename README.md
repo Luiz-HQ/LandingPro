@@ -57,7 +57,6 @@ Este projeto reforçou a importância de uma base técnica sólida para alcança
 
 - **Lições:** A performance não é um luxo, é uma necessidade. Uma landing page rápida e bem otimizada transmite profissionalismo e respeito pelo tempo do usuário.
 - **Melhorias Futuras:**
-  - [ ] Implementar um teste A/B para os títulos principais (Headlines) usando a Vercel.
   - [ ] Adicionar um pequeno formulário de contato com integração a uma API (Resend) como alternativa ao WhatsApp.
   - [ ] Criar um "Modo Escuro" (Dark Mode) para aprimorar a experiência do usuário.
 
@@ -71,7 +70,7 @@ A LandingPro foi projetada com a filosofia "Mobile-First", garantindo uma experi
 | --------------------------------------------- | ----------------------------------------- |
 | ![Demonstração Desktop](public/in_action.gif) | ![Demonstração Mobile](public/mobile.gif) |
 
-### Screenshots de Seções-Chave
+### GIFs de Seções-Chave
 
 | Seção Hero                         | Seção de Benefícios                         |
 | ---------------------------------- | ------------------------------------------- |
