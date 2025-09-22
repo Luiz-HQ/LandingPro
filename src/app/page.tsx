@@ -27,7 +27,7 @@ export default function Home() {
       icon: <Zap className="h-8 w-8 text-blue-600" />,
       title: "Entrega Rápida",
       description:
-        "Sua landing page pronta em até 48 horas, sem comprometer a qualidade.",
+        "Sua landing page pronta em poucos dias, sem comprometer a qualidade.",
     },
     {
       icon: <Palette className="h-8 w-8 text-purple-600" />,
@@ -131,7 +131,7 @@ export default function Home() {
         <div className="container mx-auto text-center">
           <div className="flex items-center justify-center gap-2 mb-4">
             <p className="bg-blue-100 text-[10px] text-[#2445c9] font-semibold w-[110px] rounded-lg p-1 mb-6 hover:bg-blue-200">
-              ⚡ Entrega Rapida!
+              ⚡ Entrega Rápida!
             </p>
           </div>
 
@@ -161,7 +161,7 @@ export default function Home() {
           <div className="mt-12 flex flex-wrap justify-center items-center gap-8 text-sm text-gray-500">
             <div className="flex items-center">
               <Clock className="h-4 w-4 mr-2 text-green-600" />
-              Entrega em 48h
+              Entrega rápida
             </div>
             <div className="flex items-center">
               <DollarSign className="h-4 w-4 mr-2 text-green-600" />
@@ -237,10 +237,10 @@ export default function Home() {
                   Ativo
                 </p>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">
+              <h3 className="text-xl font-bold text-gray-900 mb-2 text-left">
                 Seu Site Profissional
               </h3>
-              <p className="text-gray-600 mb-4">
+              <p className="text-gray-600 mb-4 text-left">
                 Landing page moderna e responsiva
               </p>
               <div className="space-y-2">
@@ -309,8 +309,8 @@ export default function Home() {
             Pronto para aumentar suas vendas?
           </h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
-            Entre em contato agora e receba sua landing page profissional em até
-            48 horas. Orçamento sem compromisso!
+            Entre em contato agora e receba sua landing page profissional em
+            poucos dias. Orçamento sem compromisso!
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
