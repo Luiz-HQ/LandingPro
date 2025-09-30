@@ -4,7 +4,7 @@
 
 > Este projeto é mais do que um simples site: é uma demonstração prática de como uma landing page bem construída pode ser a ferramenta mais poderosa para transformar visitantes em clientes. O objetivo é servir como meu portfólio principal e, ao mesmo tempo, como uma solução real para pequenos e médios negócios que buscam uma presença online eficaz e com retorno rápido.
 
-**[➡️ Visite a Landing Page ao Vivo] https://professional-landing-page-zeta.vercel.app/**
+**[➡️ Visite a Landing Page ao Vivo] https://landingpro-zeta.vercel.app/**
 
 ---
 
