@@ -1,3 +1,5 @@
+import { Button } from "@/components/Button";
+import { Card } from "@/components/Card";
 import {
   ArrowRight,
   CheckCircle,
@@ -116,13 +118,11 @@ export default function Home() {
             </a>
           </nav>
 
-          <a
-            href={whatsappLink}
-            target="_blank"
-            className="bg-[#171717] hover:bg-[#303030] px-4 py-2 rounded-md text-[#FDFEFF] font-bold cursor-pointer text-[14px] hidden md:flex items-center gap-2"
-          >
-            <MessageCircle className="w-4" />
-            Falar Agora
+          <a href={whatsappLink} target="_blank">
+            <Button>
+              <MessageCircle className="w-4" />
+              Falar Agora
+            </Button>
           </a>
         </div>
       </header>
@@ -147,14 +147,15 @@ export default function Home() {
           </p>
 
           <div className="flex items-center justify-center gap-2">
-            <a
-              href={whatsappLink}
-              target="_blank"
-              className="bg-[#155DFC] hover:bg-[#003ab8] flex items-center justify-center gap-2 cursor-pointer rounded-md text-[#FDFEFF] p-3"
-            >
-              <Zap className="h-5 w-5 mr-2" />
-              Quero um Orçamento GRÁTIS!
-              <ArrowRight className="h-5 w-5 ml-2" />
+            <a href={whatsappLink} target="_blank">
+              <Button
+                variant="blue"
+                className="flex items-center justify-center gap-2"
+              >
+                <Zap className="h-5 w-5 mr-2" />
+                Quero um Orçamento GRÁTIS!
+                <ArrowRight className="h-5 w-5 ml-2" />
+              </Button>
             </a>
           </div>
 
@@ -186,20 +187,20 @@ export default function Home() {
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Card Here! it doesnt have component lib, i created my own card */}
             {features.map((feature, index) => (
-              <div
-                key={index}
-                className="rounded-md border border-gray-200 p-6 shadow-md hover:shadow-xl transition-shadow duration-300"
-              >
-                <div className="mx-auto mb-4 p-3 bg-gray-50 rounded-full w-fit">
-                  {feature.icon}
-                </div>
-                <h3 className="text-xl">{feature.title}</h3>
-                <p className="text-gray-600 text-sm mt-4">
-                  {feature.description}
-                </p>
-              </div>
+              <Card.Root key={index} className="items-center text-center">
+                <Card.Header>
+                  <div className="mx-auto p-3 bg-gray-50 rounded-full w-fit">
+                    {feature.icon}
+                  </div>
+                </Card.Header>
+                <Card.Body>
+                  <h3 className="text-xl">{feature.title}</h3>
+                  <p className="text-gray-600 text-sm mt-4">
+                    {feature.description}
+                  </p>
+                </Card.Body>
+              </Card.Root>
             ))}
           </div>
         </div>
@@ -271,30 +272,29 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <div
-                key={index}
-                className="flex flex-col items-start rounded-lg border border-gray-200 p-6 shadow-md hover:shadow-xl transition-shadow duration-300"
-              >
-                <div className="flex items-center space-x-1 mb-2">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className="h-4 w-4 fill-yellow-400 text-yellow-400"
-                    />
-                  ))}
-                </div>
-
-                <h3 className="text-lg font-semibold text-gray-900 mb-1">
-                  {testimonial.name}
-                </h3>
-                <h4 className="text-gray-600 text-sm mb-8">
-                  {testimonial.business}
-                </h4>
-
-                <p className="text-gray-600 italic text-left">
-                  &quot;{testimonial.text}&quot;
-                </p>
-              </div>
+              <Card.Root key={index} className="items-start">
+                <Card.Header>
+                  <div className="flex items-center space-x-1">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star
+                        key={i}
+                        className="h-4 w-4 fill-yellow-400 text-yellow-400"
+                      />
+                    ))}
+                  </div>
+                </Card.Header>
+                <Card.Body className="flex flex-col items-start">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-1">
+                    {testimonial.name}
+                  </h3>
+                  <h4 className="text-gray-600 text-sm mb-4">
+                    {testimonial.business}
+                  </h4>
+                  <p className="text-gray-600 italic text-left">
+                    &quot;{testimonial.text}&quot;
+                  </p>
+                </Card.Body>
+              </Card.Root>
             ))}
           </div>
         </div>
@@ -313,21 +313,23 @@ export default function Home() {
             poucos dias. Orçamento sem compromisso!
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
-              href={whatsappLink}
-              target="_blank"
-              className="flex items-center justify-center bg-[#48BC5D] text-white hover:bg-gray-100 hover:text-[#20974d] transition-colors duration-400 cursor-pointer rounded-md px-4 py-2 text-lg"
-            >
-              <MessageCircle className="h-5 w-5 mr-2" />
-              WhatsApp: (13) 98226-4495
+            <a href={whatsappLink} target="_blank">
+              <Button
+                variant="green"
+                className="flex items-center justify-center"
+              >
+                <MessageCircle className="h-5 w-5 mr-2" />
+                WhatsApp: (13) 98226-4495
+              </Button>
             </a>
-            <a
-              href="mailto:luizhn1703@gmail.com"
-              target="blank"
-              className="flex items-center justify-center bg-white text-blue-600 hover:bg-blue-300 hover:text-white transition-colors duration-400 cursor-pointer rounded-md px-4 py-2 text-lg"
-            >
-              <Mail className="h-5 w-5 mr-2" />
-              Enviar E-mail
+            <a href="mailto:luizhn1703@gmail.com" target="blank">
+              <Button
+                variant="white"
+                className="flex items-center justify-center"
+              >
+                <Mail className="h-5 w-5 mr-2" />
+                Enviar E-mail
+              </Button>
             </a>
           </div>
 
